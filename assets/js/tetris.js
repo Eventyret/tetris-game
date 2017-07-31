@@ -3,8 +3,6 @@ var context = canvas.getContext('2d');
 
 context.scale(20, 20);
 
-
-
 var matrix = [
     [0,0,0],
     [1,1,1],
@@ -36,9 +34,10 @@ function createMatrix(w, h){
 function draw() {
     context.fillStyle = '#000';
     context.fillRect(0, 0, canvas.width, canvas.height);
-
+    drawMatrix(arena, {x: 0, y: 0});
     drawMatrix(player.matrix, player.pos);
 }
+
 function drawMatrix(matrix, offset){
 matrix.forEach((row, y) => {
     row.forEach((value, x) => {
@@ -72,6 +71,14 @@ function playerDrop(){
     dropCounter = 0;
 }
 
+function playerMove(dir){
+    player.pos.x += dir;
+    if (collide(arena,player)) {
+        player.pos.x -= dir;
+    }
+}
+
+function rotate(matrix,dir)
 
 var dropCounter = 0;
 var dropInterval = 1000;
@@ -104,9 +111,9 @@ var player = {
 document.addEventListener('keydown', event => {
     
     if (event.keyCode === 37) {
-        player.pos.x--; 
+        playerMove(-1);
     } else if (event.keyCode === 39){
-        player.pos.x++ ;
+        playerMove(1);
     } else if (event.keyCode === 40){
         playerDrop();
     }
