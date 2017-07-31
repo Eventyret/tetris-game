@@ -11,15 +11,22 @@ var matrix = [
     [1,1,1],
     [0,1,0],
 ];
-function drawMatrix(matrix){
+function drawMatrix(matrix, offset){
 matrix.forEach((row, y) => {
     row.forEach((value, x) => {
         if (value !== 0) {
             context.fillStyle = 'red';
-            context.fillRect (x, y, 1, 1);
-        }
+            context.fillRect(x + offset.x,
+                             y + offset.y,
+                            1, 1);
+            }
+        });
     });
-});
 }
 
-drawMatrix(matrix);
+var player = {
+    pos:{x: 5, y: 5},
+    matrix: matrix,
+}
+
+drawMatrix(player.matrix, player.pos);
