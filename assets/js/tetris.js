@@ -16,8 +16,8 @@ function collide(arena, player) {
     for (var y=0; y < m.length; y++) {
         for (var x= 0; x < m[y].length; ++x) {
             if (m[y][x] !== 0 &&
-                areana[y + o.y] &&
-                areana[y + o.y][x + o.x] !== 0) {
+                (areana[y + o.y] &&
+                areana[y + o.y][x + o.x]) !== 0) {
                     return true;
                 }
         }
