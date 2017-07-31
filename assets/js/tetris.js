@@ -11,6 +11,28 @@ var matrix = [
     [0,1,0],
 ];
 
+function collide(arena, player) {
+    var [m, o] = [player.matrix, player.pos];
+    for (var y=0; y < m.length; y++) {
+        for (var x= 0; x < m[y].length; ++x) {
+            if (m[y][x] !== 0 &&
+                areana[y + o.y] &&
+                areana[y + o.y][x + o.x] !== 0) {
+                    return true;
+                }
+        }
+    }
+    return false;
+}
+
+function createMatrix(w, h){
+    var matrix = [];
+    while (h--) {
+        matrix.push(new Array(w).fill(0))
+    }
+    return matrix;
+}
+
 function draw() {
     context.fillStyle = '#000';
     context.fillRect(0, 0, canvas.width, canvas.height);
@@ -30,6 +52,22 @@ matrix.forEach((row, y) => {
     });
 }
 
+function merge(arena, player) {
+   player.matrix.forEach((row, y) => {
+       row.forEach((value, x) => {
+           if (value !== 0) {
+               arena[y + player.pos.y][x + player.pos.x] = value;
+           }
+       });
+   });
+}
+
+function playerDrop(){
+    player.pos.y++;
+    dropCounter = 0;
+}
+
+
 var dropCounter = 0;
 var dropInterval = 1000;
 var lastTime = 0;
@@ -44,13 +82,14 @@ function update(time = 0) {
 
     dropCounter += deltaTime;
     if (dropCounter > dropInterval) {
-        player.pos.y++;
-        dropCounter = 0;
+       playerDrop();
     }
 
     draw();
     requestAnimationFrame(update);
 }
+
+var arena = createMatrix(12, 20);
 
 var player = {
     pos:{x: 5, y: 5},
@@ -61,8 +100,10 @@ document.addEventListener('keydown', event => {
     
     if (event.keyCode === 37) {
         player.pos.x--; 
-    } else if (event.keyCode == 39){
+    } else if (event.keyCode === 39){
         player.pos.x++ ;
+    } else if (event.keyCode === 40){
+        playerDrop();
     }
     
     // console.log(event); // Getting Keycodes
