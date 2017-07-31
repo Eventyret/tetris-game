@@ -16,8 +16,8 @@ function collide(arena, player) {
     for (var y=0; y < m.length; y++) {
         for (var x= 0; x < m[y].length; ++x) {
             if (m[y][x] !== 0 &&
-                (areana[y + o.y] &&
-                areana[y + o.y][x + o.x]) !== 0) {
+                (arena[y + o.y] &&
+                 arena[y + o.y][x + o.x]) !== 0) {
                     return true;
                 }
         }
@@ -64,6 +64,11 @@ function merge(arena, player) {
 
 function playerDrop(){
     player.pos.y++;
+    if (collide(arena, player)){
+        player.pos.y--;
+        merge(arena, player);
+        player.pos.y = 0;
+    }
     dropCounter = 0;
 }
 
