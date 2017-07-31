@@ -26,7 +26,7 @@ function collide(arena, player) {
 function createMatrix(w, h){
     var matrix = [];
     while (h--) {
-        matrix.push(new Array(w).fill(0))
+        matrix.push(new Array(w).fill(0));
     }
     return matrix;
 }
@@ -78,7 +78,29 @@ function playerMove(dir){
     }
 }
 
-function rotate(matrix,dir)
+function playerRotate(dir) {
+    rotate(player.matrix, dir);
+}
+
+function rotate(matrix,dir) {
+    for (var y = 0; y < matrix.length; ++y) {
+        for (var x = 0; x < y; ++x) {
+            // Touble Switch -to rotate
+            [
+                matrix[x][y],
+                matrix[y][x],
+            ] = [
+                matrix[y][x],
+                matrix[x][y],
+            ];
+        }
+    }
+    if (dir > 0) {
+            matrix.forEach(row => row.reverse());
+        } else {
+            matrix.reverse();
+        }
+}
 
 var dropCounter = 0;
 var dropInterval = 1000;
@@ -106,20 +128,24 @@ var arena = createMatrix(12, 20);
 var player = {
     pos:{x: 5, y: 5},
     matrix: matrix,
-}
+};
 
 document.addEventListener('keydown', event => {
     
     if (event.keyCode === 37) {
         playerMove(-1);
-    } else if (event.keyCode === 39){
+    } else if (event.keyCode === 39) {
         playerMove(1);
-    } else if (event.keyCode === 40){
+    } else if (event.keyCode === 40) {
         playerDrop();
+    } else if (event.keyCode === 81) {
+        playerRotate(-1);
+    } else if (event.keyCode === 69) {
+        playerRotate(1);
     }
     
     // console.log(event); // Getting Keycodes
     
-})
+});
 
 update();
