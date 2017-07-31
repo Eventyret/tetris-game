@@ -3,11 +3,7 @@ var context = canvas.getContext('2d');
 
 context.scale(20, 20);
 
-var matrix = [
-    [0,0,0],
-    [1,1,1],
-    [0,1,0],
-];
+
 
 function collide(arena, player) {
     var [m, o] = [player.matrix, player.pos];
@@ -29,6 +25,52 @@ function createMatrix(w, h){
         matrix.push(new Array(w).fill(0));
     }
     return matrix;
+}
+
+function createPiece(type) {
+    if (type === 'T') {
+       return [
+            [0,0,0],
+            [1,1,1],
+            [0,1,0],
+        ];
+    } else if (type === 'O') {
+        return [
+            [1,1],
+            [1,1],
+        ];
+    } else if (type === 'L') {
+        return [
+             [0,1,0],
+             [0,1,0],
+             [0,1,1],
+         ];
+    } else if (type === 'J') {
+        return [
+             [0,1,0],
+             [0,1,0],
+             [1,1,0],
+         ];
+    } else if (type === 'I') {
+        return [
+             [0,1,0,0],
+             [0,1,0,0],
+             [0,1,0,0],
+         ];
+    } else if (type === 'S') {
+        return [
+            [0,1,1],
+            [1,1,0],
+            [0,0,0],
+         ];
+    } else if (type === 'Z') {
+        return [
+            [1,1,1],
+            [0,1,1],
+            [0,0,0],
+         ];
+    }
+    
 }
 
 function draw() {
@@ -79,7 +121,18 @@ function playerMove(dir){
 }
 
 function playerRotate(dir) {
+    var pos = player.pos.x;
+    var offset = 1;
     rotate(player.matrix, dir);
+    while (collide(arena, player)) {
+        player.pos.x += offset;
+        offset = -(offset + (offset > 0 ? 1 : -1));
+        if (offset > player.matrix[0].length) {
+            rotate(player.matrix -dir);
+            player.pos.x = pos;
+            return;
+        }
+    }
 }
 
 function rotate(matrix,dir) {
@@ -127,7 +180,7 @@ var arena = createMatrix(12, 20);
 
 var player = {
     pos:{x: 5, y: 5},
-    matrix: matrix,
+    matrix: createPiece('T'),
 };
 
 document.addEventListener('keydown', event => {
