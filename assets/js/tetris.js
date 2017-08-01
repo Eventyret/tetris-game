@@ -3,7 +3,7 @@ var context = canvas.getContext('2d');
 
 context.scale(20, 20);
 
-function arenaSweetp(){
+function arenaSweep(){
     outer: for (var y = arena.length -1; y > 0; --y) {
         for(var x = 0; x < arena[y].length; ++x){
             if (arena[y][x] === 0) {
@@ -123,7 +123,7 @@ function playerDrop(){
         player.pos.y--;
         merge(arena, player);
         playerReset();
-        arenaSweetp();
+        arenaSweep();
     }
     dropCounter = 0;
 }
