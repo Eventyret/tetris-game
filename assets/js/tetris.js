@@ -4,7 +4,7 @@ var context = canvas.getContext('2d');
 context.scale(20, 20);
 
 function arenaSweetp(){
-    outer: for (var y = arena.length -1; y < 0; --y) {
+    outer: for (var y = arena.length -1; y > 0; --y) {
         for(var x = 0; x < arena[y].length; ++x){
             if (arena[y][x] === 0) {
                 continue outer;
