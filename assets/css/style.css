@@ -1,10 +1,6 @@
-body {
-    background-color: #212121;
-}
 canvas {
-    border: dotted .2em #fff;
+    border: solid .3em #EF5350;
     height: 80vh;
-    border-radius: 5px;
 }
 .no-border {
     border-top: 0px solid #fff;
@@ -21,12 +17,13 @@ margin-top: 0px;
 .container {
     margin-top: 10px;
 }
-.well {
-    border: 1px solid #212121;
-    border-radius: 5px;
-}
-.nav-wrapper {
-    background-color: #3e3f3a;
+td, th {
+    padding: 15px 5px;
+    display: table-cell;
+    text-align: left;
+    vertical-align: middle;
+    border-radius: 2px;
+    font-weight: 600;
 }
 .mbox-wrapper {
     display: none;
@@ -72,3 +69,29 @@ margin-top: 0px;
     color: #333333;
     font-weight: 600;
 }
+
+.controller {
+    font-size: 24px;
+    font-weight: 300;
+}
+nav {
+    height: 64px;
+    line-height: 64px;
+    margin-bottom: 15px;
+}
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    background-color: rgba(250, 250, 250, 0);
+    padding: 0;
+    max-height: 70%;
+    width: 55%;
+    margin: auto;
+    overflow-y: auto;
+    border-radius: 2px;
+    will-change: top, opacity;
+    -webkit-box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.00), 0 3px 14px 2px rgba(0, 0, 0, 0.00), 0 5px 5px -3px rgbargba(0, 0, 0, 0.00);
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.00), 0 3px 14px 2px rgba(0, 0, 0, 0.00), 0 5px 5px -3px rgba(0, 0, 0, 0.00);
+    }
