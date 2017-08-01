@@ -1,3 +1,7 @@
+$( ".btn" ).click(function() {
+    $( this ).toggleClass("green");
+  });
+
 var canvas = document.getElementById('tetris');
 var context = canvas.getContext('2d');
 
@@ -150,6 +154,7 @@ function playerReset() {
                    (player.matrix[0].length / 2 | 0);
     if (collide (arena, player)) {
         arena.forEach(row => row.fill(0));
+        bootbox.alert('Out of luck your total score was: ' + player.score);
         player.score = 0;
         updateScore();
     }
@@ -191,7 +196,7 @@ function rotate(matrix,dir) {
 }
 
 var dropCounter = 0;
-var dropInterval = 1000;
+var dropInterval = 700;
 var lastTime = 0;
 
 
@@ -262,5 +267,6 @@ document.addEventListener('keydown', event => {
     // console.log(event); // Getting Keycodes
     
 });
+
 playerReset();
 update();

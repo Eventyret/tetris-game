@@ -2,3 +2,18 @@ canvas {
     border: solid .2em #fff;
     height: 80vh;
 }
+.no-border {
+    border-top: 0px solid #fff;
+}
+#restart-btn{
+margin-top: 0px;
+}
+.btn {
+    color: #fff;
+}
+.btn:hover {
+    color: #fff;
+}
+.container {
+    margin-top: 10px;
+}
