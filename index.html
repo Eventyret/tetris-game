@@ -22,21 +22,22 @@
     </nav>
     <!-- Navbar end -->
     
-    <!-- Right Column Start -->
-        <div class="col-lg-4">
-                <ul class="collection">
-                        <li class="collection-item avatar">
-                          <i class="material-icons circle red">P1</i>
-                          <span class="title">Title</span>
-                          <p>Player Name: <span id="playername"></span><p>
-                             Second Line
-                          </p>
-                          <a href="#" onclick="playerName();" class="secondary-content"><i class="material-icons">grade</i></a>
-                        </li>
-                      </ul>
 
+        <div class="col-lg-4">    <!-- Right Column Start -->
+            <div class="card hoverable">
+                    <div class="card-content black-text text-center">
+                        </p><span class="card-title" id="playername">Player 1</span><span class="card-title">Your Highscore</span>
+                        <a class="btn-floating btn-large waves-effect waves-light  red lighten-1"><i class="material-icons" id="highscore">0</i></a>
+                    </div>
+                    <div class="card-action text-center">
+                        <a href="#" onclick="document.getElementById('tune1').muted=!document.getElementById('tune1').muted">Nostagic</a>
+                        <a href="#" onclick="document.getElementById('tune2').muted=!document.getElementById('tune2').muted">Party</a>
+                    </div>
+                </div>
         </div> <!-- Right Column Ends -->
-        
+
+
+        <!-- <a href="#" onclick="playerName();" class="secondary-content"><i class="material-icons">Set Playername</i></a> -->
 
 
 <!-- Game start -->

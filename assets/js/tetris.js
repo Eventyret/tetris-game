@@ -1,7 +1,6 @@
 // Create the canvas
 var canvas = document.getElementById('tetris');
 var context = canvas.getContext('2d');
-
 // Scale it
 context.scale(20, 20);
 
@@ -161,6 +160,7 @@ function playerReset() {
                 mbox.alert('Sad for you it\'s going to restart anyways'), setTimeout(function(){ location.reload(); }, 2500);
             }
         })
+        store.set(player.score).score == 'score'
         player.score = 0;
         updateScore();
     }
@@ -225,6 +225,7 @@ function update(time = 0) {
 }
 
 function updateScore() {
+    localStorage.highscore = player.score;
     document.getElementById('score').innerHTML = player.score
 }
 

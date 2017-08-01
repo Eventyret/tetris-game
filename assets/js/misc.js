@@ -1,5 +1,3 @@
-
-
 $( ".btn" ).click(function() {
   $( this ).toggleClass("green");
 });
@@ -21,3 +19,5 @@ function dis(arg) {
   bootbox.alert("Player name set to " + arg);
 }
 document.getElementById("playername").innerHTML = localStorage.playername;
+// document.getElementById("highscore").innerHTML = localStorage.highscore;
+document.getElementById("highscore").innerHTML = localStorage.highscore;
