@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,26 +10,82 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <title>Tetris Game</title>
 </head>
-<body>
-        <div class="col-sm-6 col-sm-offset-3">
-            <div class="row">
 
-            <canvas id="tetris" width="250" height="400"></canvas>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                    aria-controls="navbar">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                <a class="navbar-brand" href="#">Project name</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
         </div>
-        </div>
-    <div class="col-sm-3">
-    <div class="row">
-        <div class="well">
-        <h1>Score</h1>
-    </div></div>
+    </nav>
+
+    <div class="col-sm-6 col-sm-offset-3">
         <div class="row">
-        <div class="well">
+            <canvas id="tetris" width="240" height="400"></canvas>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="row">
+            <div class="well">
                 <h1>Score</h1>
-                
-            </div></div>
-</div>
+                <h1 id="score"></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="well">
+                <h1>Controller</h1>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Direction</th>
+                            <th>Key</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><i class="fa fa-arrow-left"></i></td>
+                            <td>A</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-arrow-right"></i></td>
+                            <td>D</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-arrow-down"></i></td>
+                            <td>S</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-arrows-alt"></i></td>
+                            <td>Q</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa fa-arrows-alt"></i></td>
+                            <td>E</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
     <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/tetris.js"></script>
 </body>
+
 </html>
