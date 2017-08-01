@@ -17,22 +17,33 @@
 <!-- Navbar Start -->
     <nav>
         <div class="nav-wrapper">
-            <p class="brand-logo center">Tetris</p>
+            <p class="brand-logo center">Tetris - Material edition</p>
         </div>
     </nav>
     <!-- Navbar end -->
     
 
         <div class="col-lg-4">    <!-- Right Column Start -->
-            <div class="card hoverable">
-                    <div class="card-content black-text text-center">
-                        </p><span class="card-title" id="playername">Player 1</span><span class="card-title">Your Highscore</span>
-                        <a class="btn-floating btn-large waves-effect waves-light  red lighten-1"><i class="material-icons" id="highscore">0</i></a>
+            <div class="col s12 m7">
+                    <div class="card horizontal">
+                      <div class="card-image">
+                        <img src="https://lorempixel.com/100/190/nature/6">
+                      </div>
+                      <div class="card-stacked">
+                        <div class="card-content">
+                                <div class="left"><span class="card-title" id="playername">Player 1</span></div>
+                                <div class="right">
+                                    <span class="card-title">Your Highscore</span>
+                                <a class="btn-floating btn-large blue lighten-1"><i class="material-icons" id="highscore">0</i></a>
+                            </div>
+                        </div>
+                        <div class="card-action">
+                        <a href="#" classn "btn red" onclick="playerName();">Set your Username</a>
+                        </div>
+                      </div>
                     </div>
-                    <div class="card-action text-center">
-                        <a href="#" onclick="playerName();">Set Username</a>
-                    </div>
-                </div>
+                  </div>
+                        
         </div> <!-- Right Column Ends -->
 
 
@@ -56,9 +67,9 @@
             </div>
             <div class="card-action text-center">
                 <audio id="tune1" src="assets/music.mp3" autoplay loop muted></audio>
-                <a href="#" onclick="document.getElementById('tune1').muted=!document.getElementById('tune1').muted">Nostagic Tetris</a>
+                <a href="#" onclick="document.getElementById('tune1').muted=!document.getElementById('tune1').muted">Nostagic Tetris <i class="fa fa-headphones"></i></a>
                 <audio id="tune2" src="assets/music2.mp3" autoplay loop muted></audio>
-                <a href="#" onclick="document.getElementById('tune2').muted=!document.getElementById('tune2').muted">Party Tetris<i class="material-icons"></i></a>
+                <a href="#" onclick="document.getElementById('tune2').muted=!document.getElementById('tune2').muted">Party Tetris<i class="fa fa-headphones"></i></a>
             </div>
         </div>
         <!-- Your Score Ends -->

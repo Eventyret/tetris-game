@@ -157,10 +157,10 @@ function playerReset() {
             if (yes) {
                 location.reload();
             } else {
-                mbox.alert('Sad for you it\'s going to restart anyways'), setTimeout(function(){ location.reload(); }, 2500);
+                mbox.alert('Sad for you it\'s going to restart anyways'), setTimeout(function(){ location.reload(); }, 1500);
             }
-        })
-        store.set(player.score).score == 'score'
+        });
+        store.set(player.score).score == 'score';
         player.score = 0;
         updateScore();
     }
@@ -226,19 +226,19 @@ function update(time = 0) {
 
 function updateScore() {
     localStorage.highscore = player.score;
-    document.getElementById('score').innerHTML = player.score
+    document.getElementById('score').innerHTML = player.score;
 }
 
 // Colors for blocks They are random
 var colors = [
     null,
-    '#FF0D72',
-    '#0DC2FF',
-    '#0DFF72',
-    '#F538FF',
-    '#FF8E0D',
-    '#FFE138',
-    '#3877FF',
+    '#E91E63', // Pink
+    '#2196F3', // Light Blue
+    '#00E676', // Green
+    '#F44336', // Red 
+    '#FF9800', // Orange
+    '#FFEB3B', // Yellow
+    '#2962FF' // Dark Blue
 ];
 // Creating the Arena
 var arena = createMatrix(12, 20);
