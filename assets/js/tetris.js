@@ -233,17 +233,27 @@ var player = {
     matrix: null,
     score: 0
 };
+// Keyboard bindings QUERTY Style http://keycode.info/
 
 document.addEventListener('keydown', event => {
     
-    if (event.keyCode === 37) {
+        // Arrow Left === 37 // A === 65
+    if (event.keyCode === 65) {
         playerMove(-1);
-    } else if (event.keyCode === 39) {
+        
+        // Arrow Right === 39 // D === 68
+    } else if (event.keyCode === 68) {
         playerMove(1);
-    } else if (event.keyCode === 40) {
+        
+        // Arrow Down  === 40 // S === 83
+    } else if (event.keyCode === 83) {
         playerDrop();
+        
+        // Q === 83
     } else if (event.keyCode === 81) {
         playerRotate(-1);
+
+        // E === 69
     } else if (event.keyCode === 69) {
         playerRotate(1);
     }

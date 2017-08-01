@@ -1,0 +1,9 @@
+body {
+    text-align: center;
+    font-size 2em;
+    margin-top: 50px;
+}
+canvas {
+    border: solid .2em #fff;
+    height: 80vh;
+}
