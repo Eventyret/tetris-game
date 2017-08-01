@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+    <link href="//cdn.bri.io/mbox/dist/mbox-0.0.1.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <title>Tetris Game</title>
@@ -16,11 +17,10 @@
 
         <nav>
                 <div class="nav-wrapper">
-                  <a href="#" class="brand-logo center">Logo</a>
+                  <a href="#" class="brand-logo center">Tetris</a>
                   <ul id="nav-mobile" class="left hide-on-med-and-down">
-                    <li><a href="sass.html">Sass</a></li>
-                    <li><a href="badges.html">Components</a></li>
-                    <li><a href="collapsible.html">JavaScript</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="https://www.github.com/Eventyret/tetris-game">Github</a></li>
                   </ul>
                 </div>
               </nav>
@@ -28,7 +28,7 @@
                   <div class="col-sm-3">
                         <div class="row">
                                 <div class="well">
-                                    <h2>Controller</h2>
+                                    <h3>Controller</h3>
                                     <table class="table">
                                         <thead>
                                             <tr>
@@ -67,10 +67,10 @@
             <canvas id="tetris" width="240" height="400"></canvas>
             <div class="btn-group">
             <audio id="tune1" src="assets/music.mp3" autoplay loop muted></audio>
-            <a href="#" class="btn blue waves-effect waves-light" onclick="document.getElementById('tune1').muted=!document.getElementById('tune1').muted">It's Nostagic time! <i class="fa fa-music"></i></a>
-                <a class="btn red waves-effect waves-ligh" id="restart-btn" href="#" onclick="location.reload();">Restart <i class="fa fa-refresh"></i></a>
+            <a href="#" class="btn blue" onclick="document.getElementById('tune1').muted=!document.getElementById('tune1').muted">It's Nostagic time! <i class="fa fa-music"></i></a>
+                <a class="btn red" id="restart-btn" href="#" onclick="location.reload();">Restart <i class="fa fa-refresh"></i></a>
                 <audio id="tune2" src="assets/music2.mp3" autoplay loop muted></audio>
-            <a href="#" class="btn blue waves-effect waves-light" onclick="document.getElementById('tune2').muted=!document.getElementById('tune2').muted">It's party time! <i class="fa fa-music"></i></a>
+            <a href="#" class="btn blue" onclick="document.getElementById('tune2').muted=!document.getElementById('tune2').muted">It's party time! <i class="fa fa-music"></i></a>
             
         </div>
     </div>
@@ -78,16 +78,16 @@
     <div class="col-sm-3 text-center">
         <div class="row">
             <div class="well">
-                <h2>Your Score</h2>
-                <h2><span class="label label-default" id="score">0</span></h2>
+                <h3>Your Score</h3>
+                <h3><span class="label label-default" id="score">0</span></h3>
             </div>
         </div>
         
 </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
-    <script src="assets/js/bootbox.min.js"></script>
+    <script src="assets/js/misc.js"></script>
+    <script src="//cdn.bri.io/mbox/dist/mbox-0.0.1.min.js"></script>
     <script src="assets/js/tetris.js"></script>
 </body>
 

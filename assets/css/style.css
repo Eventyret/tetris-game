@@ -1,6 +1,10 @@
+body {
+    background-color: #212121;
+}
 canvas {
-    border: solid .2em #fff;
+    border: dotted .2em #fff;
     height: 80vh;
+    border-radius: 5px;
 }
 .no-border {
     border-top: 0px solid #fff;
@@ -16,4 +20,55 @@ margin-top: 0px;
 }
 .container {
     margin-top: 10px;
+}
+.well {
+    border: 1px solid #212121;
+    border-radius: 5px;
+}
+.nav-wrapper {
+    background-color: #3e3f3a;
+}
+.mbox-wrapper {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10000;
+    outline: 0;
+    background: rgb(33,33,33);
+}
+.mbox {
+    max-width: 600px;
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+    background: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    text-align: center;
+}
+
+#game {
+    color: #F44336;
+    font-weight: 600;
+}
+#over {
+    color: #4CAF50;
+    font-weight: 600;
+}
+
+#playerscore {
+    font-size: 50px;
+}
+
+#restart{
+    font-weight: 600;
+}
+.label-default {
+    background-color: #e7e7e7;
+    color: #333333;
+    font-weight: 600;
 }

@@ -1,12 +1,11 @@
-$( ".btn" ).click(function() {
-    $( this ).toggleClass("green");
-  });
-
+// Create the canvas
 var canvas = document.getElementById('tetris');
 var context = canvas.getContext('2d');
 
+// Scale it
 context.scale(20, 20);
 
+// If a player has filled a row we want to remove it and give them a score
 function arenaSweep(){
     let rowCount = 1;
     outer: for (var y = arena.length -1; y > 0; --y) {
@@ -27,7 +26,7 @@ function arenaSweep(){
 }
 
 
-
+// Creating the collision function
 function collide(arena, player) {
     var [m, o] = [player.matrix, player.pos];
     for (var y=0; y < m.length; y++) {
@@ -49,7 +48,7 @@ function createMatrix(w, h){
     }
     return matrix;
 }
-
+// Creating the Pieces in shapes
 function createPiece(type) {
     if (type === 'T') {
        return [
@@ -145,7 +144,7 @@ function playerMove(dir){
     }
 }
 
-
+// Game Over, its filled up 
 function playerReset() {
     var pieces = 'ILJOTSZ';
     player.matrix = createPiece(pieces[pieces.length * Math.random() | 0]);
@@ -154,11 +153,19 @@ function playerReset() {
                    (player.matrix[0].length / 2 | 0);
     if (collide (arena, player)) {
         arena.forEach(row => row.fill(0));
-        bootbox.alert('Out of luck your total score was: ' + player.score);
+        // Give the player their score and restart, since we will continue forever we will force a restart anyways
+        mbox.confirm('<h4 id="game">G A M E</h4><h4 id="over">O V E R</h4><br><b>Total Score<br><p id="playerscore">' + player.score + '</p></b><br><p id="restart">Go again?</p>', function(yes){
+            if (yes) {
+                location.reload();
+            } else {
+                mbox.alert('Sad for you it\'s going to restart anyways'), setTimeout(function(){ location.reload(); }, 2500);
+            }
+        })
         player.score = 0;
         updateScore();
     }
 }
+// Lets make it so the player can't rotate through walls - Then we offset them
 
 function playerRotate(dir) {
     var pos = player.pos.x;
@@ -175,6 +182,7 @@ function playerRotate(dir) {
     }
 }
 
+// Rotation since its a square we mix left and right continus to get a full rotation
 function rotate(matrix,dir) {
     for (var y = 0; y < matrix.length; ++y) {
         for (var x = 0; x < y; ++x) {
@@ -199,7 +207,7 @@ var dropCounter = 0;
 var dropInterval = 700;
 var lastTime = 0;
 
-
+// Lets update and re-draw the canvas
 function update(time = 0) {
     var deltaTime = time - lastTime;
     lastTime = time;
@@ -220,7 +228,7 @@ function updateScore() {
     document.getElementById('score').innerHTML = player.score
 }
 
-// Colors for blocks
+// Colors for blocks They are random
 var colors = [
     null,
     '#FF0D72',
@@ -231,14 +239,16 @@ var colors = [
     '#FFE138',
     '#3877FF',
 ];
-
+// Creating the Arena
 var arena = createMatrix(12, 20);
 
+// Player with starting score of 0
 var player = {
     pos:{x: 0, y: 0},
     matrix: null,
     score: 0
 };
+
 // Keyboard bindings QUERTY Style http://keycode.info/
 
 document.addEventListener('keydown', event => {
@@ -268,5 +278,5 @@ document.addEventListener('keydown', event => {
     
 });
 
-playerReset();
-update();
+playerReset(); // Lets Reset the player
+update(); // Run the update to continue to draw
