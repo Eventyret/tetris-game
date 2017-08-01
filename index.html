@@ -5,23 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/fontawesome.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <title>Tetris Game</title>
 </head>
 <body>
-    <div class="container">
-        <div class="col-md-4">
+        <div class="col-sm-6 col-sm-offset-3">
+            <div class="row">
 
+            <canvas id="tetris" width="250" height="400"></canvas>
         </div>
-        <div class="col-md-4">
-            <canvas id="tetris" width="240" height="400"></canvas>
-            <div id="controller"></div>
         </div>
-    <div class="col-md-4">
-    <p>Your Score:</p><span class="badge" id="score"></span>
+    <div class="col-sm-3">
+    <div class="row">
+        <div class="well">
+        <h1>Score</h1>
+    </div></div>
+        <div class="row">
+        <div class="well">
+                <h1>Score</h1>
+                
+            </div></div>
 </div>
-    </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.js"></script>
     <script src="assets/js/tetris.js"></script>

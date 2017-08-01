@@ -215,6 +215,7 @@ function updateScore() {
     document.getElementById('score').innerHTML = player.score
 }
 
+// Colors for blocks
 var colors = [
     null,
     '#FF0D72',
