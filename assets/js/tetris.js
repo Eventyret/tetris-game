@@ -188,16 +188,16 @@ function update(time = 0) {
     requestAnimationFrame(update);
 }
 
-var colors = {
+var colors = [
     null,
-    'red',
-    'blue',
-    'voilet',
-    'green',
-    'purple',
-    'orange',
-    'pink',
-}
+    '#FF0D72',
+    '#0DC2FF',
+    '#0DFF72',
+    '#F538FF',
+    '#FF8E0D',
+    '#FFE138',
+    '#3877FF',
+];
 
 var arena = createMatrix(12, 20);
 
