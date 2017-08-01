@@ -120,3 +120,8 @@ nav {
     transition: color .3s ease;
     text-transform: uppercase;
 }
+#avatar {
+    margin-top: 25px;
+    height: 150px;
+    width: 150px;
+}

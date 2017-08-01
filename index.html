@@ -14,72 +14,86 @@
 </head>
 
 <body>
-<!-- Navbar Start -->
+    <!-- Navbar Start -->
     <nav>
         <div class="nav-wrapper">
             <p class="brand-logo center">Tetris - Material edition</p>
         </div>
     </nav>
     <!-- Navbar end -->
-    
 
-        <div class="col-lg-4">    <!-- Right Column Start -->
-            <div class="col s12 m7">
-                    <div class="card horizontal">
-                      <div class="card-image">
-                        <img src="https://lorempixel.com/100/190/nature/6">
-                      </div>
-                      <div class="card-stacked">
-                        <div class="card-content">
-                                <div class="left"><span class="card-title" id="playername">Player 1</span></div>
-                                <div class="right">
-                                    <span class="card-title">Your Highscore</span>
-                                <a class="btn-floating btn-large blue lighten-1"><i class="material-icons" id="highscore">0</i></a>
-                            </div>
+
+    <div class="col-lg-4">
+        <!-- Right Column Start -->
+        <div class="col s12 m7">
+            <div class="card horizontal">
+                <div class="card-image">
+                    <img src="http://www.upplanet.com/bighero/outlay-demo/img/avatars/avatar2.png" id="avatar">
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <div class="left"><span class="card-title" id="playername">Player 1</span></div>
+                        <div class="right">
+                            <span class="card-title">Your Highscore</span>
+                            <a class="btn-floating btn-large blue lighten-1"><i class="material-icons" id="highscore">0</i></a>
                         </div>
-                        <div class="card-action">
+                    </div>
+                    <div class="card-action">
                         <a href="#" classn "btn red" onclick="playerName();">Set your Username</a>
                         <a href="#" classn "btn red" onclick="location.reload();">Restart</a>
-                        </div>
-                      </div>
                     </div>
-                  </div>
-                          <div class="card large">
-                            <div class="card-content">
-                              <span class="card-title">About the Project</span>
-                              <p>This is a very simple page written mostly in Javascript.
-                                    It has been styled with MaterializeCSS and is using most of its colours.<br>
-                                    This was meant as a small but fun challenge from a friend.<br>
-                                    Hope you enjoy this game, and remember the username is stored in local storage.
-                                    </p><br>
-                                    <span class="card-title">Built with</span>
-                                    <ul class="collection">
-                                            <li class="collection-item"><div>Materialize<a href="http://materializecss.com" target="_blank" class="secondary-content"><i class="fa fa-globe"></i></a></div></li>
-                                            <li class="collection-item"><div>Bootstrap<a href="http://getbootstrap.com/" target="_blank" class="secondary-content"><i class="fa fa-globe"></i></a></div></li>
-                                            <li class="collection-item"><div>Bootbox.js<a href="http://bootboxjs.com/"target="_blank" class="secondary-content"><i class="fa fa-globe"></i></a></div></li>
-                                            <li class="collection-item"><div>FontAwesome<a href="http://fontawesome.io" target="_blank" class="secondary-content"><i class="fa fa-globe"></i></a></div></li>
-                                            <li class="collection-item"><div>FontAwesome<a href="http://fontawesome.io" target="_blank" class="secondary-content"><i class="fa fa-globe"></i></a></div></li>
-                                            <li class="collection-item"><div>JavaScript / Jquery</div></li>
-                                            <li class="collection-item"><div>HTML5 / CSS3</div></li>
-                                          </ul>
-                                          
-                            </div>
-                            <div class="card-action">
-                              <a href="https://github.com/Eventyret/tetris-game">Github (Source Code) <i class="fa fa-github"></i></a>
-                              <a href="http://simen.dehlin.info">About the Author <i class="fa fa-globe"></i></a>
-                            </div>
-                          </div>
-                        </div>
-        </div> <!-- Right Column Ends -->
+                </div>
+            </div>
+        </div>
+        <div class="card large">
+            <div class="card-content">
+                <span class="card-title">About the Project</span>
+                <p>This is a very simple page written mostly in Javascript. It has been styled with MaterializeCSS and is using
+                    most of its colours.<br> This was meant as a small but fun challenge from a friend.<br> Hope you enjoy
+                    this game</p><br>
+                <span class="card-title">Built with</span>
+                <ul class="collection">
+                    <li class="collection-item">
+                        <div>Materialize<a href="http://materializecss.com" target="_blank" class="secondary-content"><i class="fa fa-globe"></i></a></div>
+                    </li>
+                    <li class="collection-item">
+                        <div>Bootstrap<a href="http://getbootstrap.com/" target="_blank" class="secondary-content"><i class="fa fa-globe"></i></a></div>
+                    </li>
+                    <li class="collection-item">
+                        <div>Bootbox.js<a href="http://bootboxjs.com/" target="_blank" class="secondary-content"><i class="fa fa-globe"></i></a></div>
+                    </li>
+                    <li class="collection-item">
+                        <div>FontAwesome<a href="http://fontawesome.io" target="_blank" class="secondary-content"><i class="fa fa-globe"></i></a></div>
+                    </li>
+                    <li class="collection-item">
+                        <div>FontAwesome<a href="http://fontawesome.io" target="_blank" class="secondary-content"><i class="fa fa-globe"></i></a></div>
+                    </li>
+                    <li class="collection-item">
+                        <div>JavaScript / Jquery</div>
+                    </li>
+                    <li class="collection-item">
+                        <div>HTML5 / CSS3</div>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="card-action">
+                <a href="https://github.com/Eventyret/tetris-game">Github (Source Code) <i class="fa fa-github"></i></a>
+                <a href="http://simen.dehlin.info">See my other Work <i class="fa fa-globe"></i></a>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Right Column Ends -->
 
 
-        <!-- <a href="#" onclick="playerName();" class="secondary-content"><i class="material-icons">Set Playername</i></a> -->
+    <!-- <a href="#" onclick="playerName();" class="secondary-content"><i class="material-icons">Set Playername</i></a> -->
 
 
-<!-- Game start -->
+    <!-- Game start -->
     <div class="col-lg-4 text-center">
 
-            <canvas id="tetris" class="hoverable" width="240" height="400"></canvas>
+        <canvas id="tetris" class="hoverable" width="240" height="400"></canvas>
     </div>
     <!-- Game End -->
 
@@ -100,39 +114,40 @@
         </div>
         <!-- Your Score Ends -->
 
-<!-- Controller Start -->
-<div class="row">
-        <ul class="collection with-header hoverable">
-            <li class="collection-header text-center">
+        <!-- Controller Start -->
+        <div class="row">
+            <ul class="collection with-header hoverable">
+                <li class="collection-header text-center">
                     <span class="controller">Controller</span>
-            </li>
-            <li class="collection-item">
-                <div>A<a href="#!" class="secondary-content"><i class="fa fa-arrow-left"></i></a></div>
-            </li>
-            <li class="collection-item">
-                <div>D<a href="#!" class="secondary-content"><i class="fa fa-arrow-right"></i></a></div>
-            </li>
-            <li class="collection-item">
-                <div>S<a href="#!" class="secondary-content"><i class="fa fa-arrow-down"></i></a></div>
-            </li>
-            <li class="collection-item">
-                <div>Q or E<a href="#!" class="secondary-content"><i class="fa fa-arrows-alt"></i></a></div>
-            </li>
-        </ul>
+                </li>
+                <li class="collection-item">
+                    <div>A<a href="#!" class="secondary-content"><i class="fa fa-arrow-left"></i></a></div>
+                </li>
+                <li class="collection-item">
+                    <div>D<a href="#!" class="secondary-content"><i class="fa fa-arrow-right"></i></a></div>
+                </li>
+                <li class="collection-item">
+                    <div>S<a href="#!" class="secondary-content"><i class="fa fa-arrow-down"></i></a></div>
+                </li>
+                <li class="collection-item">
+                    <div>Q or E<a href="#!" class="secondary-content"><i class="fa fa-arrows-alt"></i></a></div>
+                </li>
+            </ul>
+        </div>
+        <!-- Controller End -->
+
     </div>
-    <!-- Controller End -->
-
-    </div><!-- Left Colum End -->
+    <!-- Left Colum End -->
 
 
-<!-- Adding Jquery and additonal JS -->
+    <!-- Adding Jquery and additonal JS -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/bootbox.min.js"></script>
     <script src="assets/js/misc.js"></script>
     <script src="//cdn.bri.io/mbox/dist/mbox-0.0.1.min.js"></script>
     <script src="assets/js/tetris.js"></script>
-<!-- End of Jquery and Additonal JS -->
+    <!-- End of Jquery and Additonal JS -->
 </body>
 
 </html>
