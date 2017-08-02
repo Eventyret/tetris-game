@@ -3,22 +3,6 @@ canvas {
     height: 80vh;
 }
 
-.no-border {
-    border-top: 0px solid #fff;
-}
-
-#restart-btn {
-    margin-top: 0px;
-}
-
-.btn {
-    color: #fff;
-}
-
-.btn:hover {
-    color: #fff;
-}
-
 .container {
     margin-top: 10px;
 }
@@ -75,12 +59,6 @@ th {
     font-weight: 600;
 }
 
-.label-default {
-    background-color: #e7e7e7;
-    color: #333333;
-    font-weight: 600;
-}
-
 .controller {
     font-size: 24px;
     font-weight: 300;
@@ -91,7 +69,6 @@ nav {
     line-height: 64px;
     margin-bottom: 15px;
 }
-
 
 /* Fixing Bootbox and Materialze box clashing so hiding the backend */
 
